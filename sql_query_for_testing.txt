@@ -1,0 +1,26 @@
+1. Tambah 1 aset baru
+INSERT INTO assets (title, status, created_at, updated_at)
+VALUES (
+    'Langit Biru',
+    'active',
+    now(),
+    now()
+);
+
+2. Tambah 1 ledger untuk aset tersebut (version 1)
+INSERT INTO copyright_ledger
+(asset_id, version, data, ledger_hash, created_at, updated_at)
+VALUES (
+    4,
+    1,
+    '{
+        "owners": [
+            { "name": "Andi", "share": 0.6 },
+            { "name": "Maya", "share": 0.4 }
+        ],
+        "note": "initial registration"
+    }',
+    'd4e5f6a7b8c90123456789abcdefabcdefabcdefabcdefabcdefabcd',
+    now(),
+    now()
+);
